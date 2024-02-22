@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LondonStock.Contracts", "LondonStock.Contracts\LondonStock.Contracts.csproj", "{FF9A7948-5558-4E3B-B053-962A7A3DC140}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LondonStock", "LondonStock\LondonStock.csproj", "{25F94ED0-74FF-4B1E-B59C-0A1078863B5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LondonStock.DataAccess", "LondonStock.DataAccess\LondonStock.DataAccess.csproj", "{F75E8434-D541-4DDE-AF4A-F478C7A60F21}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A8C2A6D9-D946-4DBE-8C59-F5CA2B663E7A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{916FACA3-BC34-45EB-A028-E2F38996F446}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LondonStock.Contracts.Tests", "Tests\Unit\LondonStock.Contracts.Tests\LondonStock.Contracts.Tests.csproj", "{233C561E-9708-4D99-BFD8-D165402991D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{AC2D3756-205D-4E26-8085-5D85422B837D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LondonStock.IntegrationTests", "Tests\Integration\LondonStock.IntegrationTests\LondonStock.IntegrationTests.csproj", "{54CFAEB5-657F-4230-9024-C9BF496D417D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF9A7948-5558-4E3B-B053-962A7A3DC140}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9A7948-5558-4E3B-B053-962A7A3DC140}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9A7948-5558-4E3B-B053-962A7A3DC140}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9A7948-5558-4E3B-B053-962A7A3DC140}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25F94ED0-74FF-4B1E-B59C-0A1078863B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25F94ED0-74FF-4B1E-B59C-0A1078863B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25F94ED0-74FF-4B1E-B59C-0A1078863B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25F94ED0-74FF-4B1E-B59C-0A1078863B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F75E8434-D541-4DDE-AF4A-F478C7A60F21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F75E8434-D541-4DDE-AF4A-F478C7A60F21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F75E8434-D541-4DDE-AF4A-F478C7A60F21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F75E8434-D541-4DDE-AF4A-F478C7A60F21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{233C561E-9708-4D99-BFD8-D165402991D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{233C561E-9708-4D99-BFD8-D165402991D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{233C561E-9708-4D99-BFD8-D165402991D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{233C561E-9708-4D99-BFD8-D165402991D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CFAEB5-657F-4230-9024-C9BF496D417D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CFAEB5-657F-4230-9024-C9BF496D417D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CFAEB5-657F-4230-9024-C9BF496D417D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CFAEB5-657F-4230-9024-C9BF496D417D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{916FACA3-BC34-45EB-A028-E2F38996F446} = {A8C2A6D9-D946-4DBE-8C59-F5CA2B663E7A}
+		{233C561E-9708-4D99-BFD8-D165402991D7} = {916FACA3-BC34-45EB-A028-E2F38996F446}
+		{AC2D3756-205D-4E26-8085-5D85422B837D} = {A8C2A6D9-D946-4DBE-8C59-F5CA2B663E7A}
+		{54CFAEB5-657F-4230-9024-C9BF496D417D} = {AC2D3756-205D-4E26-8085-5D85422B837D}
+	EndGlobalSection
+EndGlobal
