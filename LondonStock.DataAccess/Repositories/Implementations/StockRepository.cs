@@ -31,20 +31,4 @@ public class StockRepository : BaseRepository<Stock>, IStockRepository
         _lseDataStore[stock.Id] = stock;
         return Result.Updated;
     }
-
-    public ErrorOr<IEnumerable<Stock>> GetStocksInRange(decimal lowerBound, decimal upperBound)
-    {
-        List<Stock> items = new();
-
-        foreach(object value in _lseDataStore.Values)
-        {
-            if(value.GetType().Name == typeof(Stock).Name)
-            {
-                _logger.LogInformation($"{value.GetType().Name}");
-                items.Add((Stock)value);
-            }     
-        }
-
-        return items.Where(x => x.Price >= lowerBound && x.Price <= upperBound).ToErrorOr();
-    }
 }

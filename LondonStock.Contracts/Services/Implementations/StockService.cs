@@ -59,17 +59,6 @@ public class StockService : IStockService
         return result.ToErrorOr();
     }
 
-    public ErrorOr<IEnumerable<Stock>> GetStocksInRange(decimal lowerBound, decimal upperBound)
-    {
-        _logger.LogInformation($"Getting all stocks within price range {lowerBound} and {upperBound}");
-
-        var rangedStocks = _stockRepository.GetStocksInRange(lowerBound, upperBound);
-
-        var result = _mapper.Map<IEnumerable<Stock>>(rangedStocks.Value);
-
-        return result.ToErrorOr();
-    }
-
     public ErrorOr<Updated> UpdateStock(Stock stock)
     {
         _logger.LogInformation($"Updating stock: {stock.Id}");
@@ -78,5 +67,16 @@ public class StockService : IStockService
         _stockRepository.UpdateStock(stockDto);
 
         return Result.Updated;
+    }
+
+    public ErrorOr<IEnumerable<Stock>> GetStocksInRange(decimal lowerBound, decimal upperBound)
+    {
+        _logger.LogInformation($"Getting all stocks within price range {lowerBound} and {upperBound}");
+
+        var rangedStocks = _stockRepository.GetAll(x => x.Price >= lowerBound && x.Price <= upperBound);
+
+        var result = _mapper.Map<IEnumerable<Stock>>(rangedStocks.Value);
+
+        return result.ToErrorOr();
     }
 }

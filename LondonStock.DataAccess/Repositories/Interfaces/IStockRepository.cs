@@ -7,5 +7,4 @@ public interface IStockRepository : IBaseRepository<Stock>
 {
     ErrorOr<Deleted> DeleteStock(string ticker);
     ErrorOr<Updated> UpdateStock(Stock stock);
-    ErrorOr<IEnumerable<Stock>> GetStocksInRange(decimal lowerBound, decimal upperBound);
 }

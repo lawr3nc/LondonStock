@@ -1,4 +1,7 @@
 using System.Collections;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
 using ErrorOr;
 using LondonStock.DataAccess.Repositories.Interfaces;
@@ -39,7 +42,7 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
         return Result.Success;
     }
 
-    public ErrorOr<IEnumerable<TEntity>> GetAll()
+    public ErrorOr<IEnumerable<TEntity>> GetAll(Expression<Func<TEntity, bool>> predicate = null)
     {
         List<TEntity> items = new();
 
@@ -50,6 +53,12 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
             if(value.GetType().Name == typeof(TEntity).Name)
                 items.Add((TEntity)value);
         }
+
+        if(predicate != null)
+            return items.AsQueryable()
+                .Where(predicate)
+                .ToList()
+                .ToErrorOr<IEnumerable<TEntity>>();
 
         return items.ToErrorOr<IEnumerable<TEntity>>();
     }
